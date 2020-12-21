@@ -1,0 +1,22 @@
+<section>
+  <nav>
+    <h3 *ngIf="!Photos.length">Loading...</h3>
+  </nav>
+  <nav *ngIf="Photos.length">
+    <button (click)="changePage(0)" [disabled]="layout.currentPage === 0">&#60;&#60;</button>
+    <button (click)="changePage(layout.currentPage - 1)" [disabled]="layout.currentPage === 0">&#60;</button>
+    <button>{{layout.currentPage + 1}}</button>
+    <button (click)="changePage(layout.currentPage + 1)" [disabled]="layout.currentPage === (layout.totalPages - 1)">&#62;</button>
+    <button (click)="changePage(layout.totalPages - 1)" [disabled]="layout.currentPage === (layout.totalPages - 1)">&#62;&#62;</button>
+  </nav>
+  <section>
+    <card *ngFor="let photo of Page" [Photo]="photo"></card>
+  </section>
+  <nav *ngIf="Photos.length">
+    <button (click)="changePage(0)" [disabled]="layout.currentPage === 0">&#60;&#60;</button>
+    <button (click)="changePage(layout.currentPage - 1)" [disabled]="layout.currentPage === 0">&#60;</button>
+    <button>{{layout.currentPage + 1}}</button>
+    <button (click)="changePage(layout.currentPage + 1)" [disabled]="layout.currentPage === (layout.totalPages - 1)">&#62;</button>
+    <button (click)="changePage(layout.totalPages - 1)" [disabled]="layout.currentPage === (layout.totalPages - 1)">&#62;&#62;</button>
+  </nav>
+</section>

@@ -1,0 +1,10 @@
+<div class="card">
+  <header>
+    <h4>Photo: {{Photo.id}}</h4>
+    <h4>Album: {{Photo.albumId}}</h4>
+    <h4>{{Photo.title}}</h4>
+  </header>
+  <section [style.background-image]="'url(' + Photo.url + ')'">
+    <img [src]="Photo.thumbnailUrl" alt={{Photo.id}}>
+  </section>
+</div>
